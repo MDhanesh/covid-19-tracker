@@ -3,10 +3,10 @@ div.style.textAlign = "center";
 var input = document.createElement("input");
 input.setAttribute("type", "search");
 input.setAttribute("id", "country");
-
+input.setAttribute("class", "input rounded m-2");
 var button = document.createElement("button");
 button.setAttribute("type", "button");
-button.setAttribute("class", "btn btn-primary");
+button.setAttribute("class", "btn btn-primary rounded");
 button.innerHTML = "search";
 button.addEventListener("click", foo);
 let active = document.createElement("div");
