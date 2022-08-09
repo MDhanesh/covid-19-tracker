@@ -3,15 +3,19 @@ div.style.textAlign = "center";
 var input = document.createElement("input");
 input.setAttribute("type", "search");
 input.setAttribute("id", "country");
-input.setAttribute("class", "input rounded m-2");
+input.setAttribute("class", "input rounded m-2 bg-info");
 var button = document.createElement("button");
-button.setAttribute("type", "button");
+button.setAttribute("type", "submit");
 button.setAttribute("class", "btn btn-primary rounded");
 button.innerHTML = "search";
 button.addEventListener("click", foo);
 let active = document.createElement("div");
 active.setAttribute("id", "active");
-div.append(input, button, active);
+let Death = document.createElement("div");
+Death.setAttribute("id", "Death");
+let Recovered = document.createElement("div");
+Recovered.setAttribute("id", "Recovered");
+div.append(input, button, active, Death, Recovered);
 document.body.append(div);
 async function foo() {
   let res = document.getElementById("country").value;
@@ -22,7 +26,7 @@ async function foo() {
   let index = result1.length - 1;
   //console.log(index);
   //console.log(result1[index].Active);
-  active.innerHTML = `Total Active cases:${result1[index].Active}
-  <br>Total Death cases:${result1[index].Deaths}<br>
-  Total Recovered cases:${result1[index].Recovered}`;
+  active.innerHTML = `Total Active cases:${result1[index].Active}`;
+  Death.innerHTML = `Total Death cases:${result1[index].Deaths}`;
+  Recovered.innerHTML = `Total Recovered cases:${result1[index].Recovered}`;
 }
